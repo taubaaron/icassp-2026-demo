@@ -1,0 +1,30 @@
+{
+  "project": {
+    "title": "Explainable Audio Codec \u2014 Supplementary Materials",
+    "authors": "A. Taub, Y. Adi, et al.",
+    "conference": "ICASSP 2025",
+    "paper_link": "",
+    "code_link": "",
+    "doi_link": ""
+  },
+  "sections": [
+    {
+      "title": "Speech \u2014 Pitch Manipulation",
+      "description": "VCTK samples across semitone shifts \u0394.",
+      "items": [
+        {
+          "type": "audio",
+          "title": "Example (replace with your file)",
+          "file": "audio/example.wav",
+          "caption": "Placeholder \u2014 add your real sample."
+        },
+        {
+          "type": "plot",
+          "title": "3D PCA Trajectory (replace)",
+          "file": "plots/example.html",
+          "caption": "Placeholder interactive plot."
+        }
+      ]
+    }
+  ]
+}
