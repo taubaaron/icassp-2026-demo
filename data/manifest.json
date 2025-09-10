@@ -1,0 +1,58 @@
+{
+  "project": {
+    "title": "Explainable Audio Codec \u2014 Supplementary Materials",
+    "authors": "A. Taub, Y. Adi, et al.",
+    "conference": "ICASSP 2025",
+    "paper_link": "",
+    "code_link": "",
+    "doi_link": "",
+    "contact_link": ""
+  },
+  "sections": [
+    {
+      "title": "Speech \u2014 Pitch Manipulation",
+      "description": "VCTK samples across semitone shifts \u0394. Replace the placeholders with your files.",
+      "items": [
+        {
+          "type": "audio",
+          "title": "Example (replace)",
+          "file": "audio/example.wav",
+          "caption": "Placeholder \u2014 add your real sample.",
+          "tags": [
+            "VCTK",
+            "+4 semitones"
+          ],
+          "mime": "audio/wav"
+        },
+        {
+          "type": "plot",
+          "title": "3D PCA Trajectory (replace)",
+          "file": "plots/example.html",
+          "caption": "Interactive PCA trajectory.",
+          "tags": [
+            "PCA",
+            "3D",
+            "latent"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Music \u2014 Instruments",
+      "description": "Jamendo/GTZAN instrument clustering demos.",
+      "items": [
+        {
+          "type": "audio",
+          "title": "Violin solo (replace)",
+          "file": "audio/violin_demo.wav",
+          "caption": "Cluster center example.",
+          "tags": [
+            "Violin",
+            "Jamendo"
+          ],
+          "mime": "audio/wav"
+        }
+      ]
+    }
+  ]
+}
