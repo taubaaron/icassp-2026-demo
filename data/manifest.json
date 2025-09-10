@@ -10,7 +10,7 @@
   "sections": [
     {
       "title": "Genres — Audio Examples",
-      "description": "Short genre exemplars.",
+      "description": "Short genre examples.",
       "items": [
         { "type": "audio", "title": "Blues",     "file": "audio/genre_blues.au",     "mime": "audio/basic" },
         { "type": "audio", "title": "Classical", "file": "audio/genre_classical.au", "mime": "audio/basic" },
