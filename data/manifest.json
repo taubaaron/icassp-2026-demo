@@ -1,57 +1,78 @@
 {
   "project": {
-    "title": "Explainable Audio Codec \u2014 Supplementary Materials",
+    "title": "Explainable Audio Codec — Supplementary Materials",
     "authors": "A. Taub, Y. Adi, et al.",
-    "conference": "ICASSP 2025",
+    "conference": "ICASSP 2026",
     "paper_link": "",
-    "code_link": "",
-    "doi_link": "",
-    "contact_link": ""
+    "code_link": "https://github.com/taubaaron/icassp-2026-demo",
+    "doi_link": ""
   },
   "sections": [
     {
-      "title": "Speech \u2014 Pitch Manipulation",
-      "description": "VCTK samples across semitone shifts \u0394. Replace the placeholders with your files.",
+      "title": "Genres — Audio Examples",
+      "description": "Short genre exemplars.",
       "items": [
-        {
-          "type": "audio",
-          "title": "Example (replace)",
-          "file": "audio/example.wav",
-          "caption": "Placeholder \u2014 add your real sample.",
-          "tags": [
-            "VCTK",
-            "+4 semitones"
-          ],
-          "mime": "audio/wav"
-        },
-        {
-          "type": "plot",
-          "title": "3D PCA Trajectory (replace)",
-          "file": "plots/example.html",
-          "caption": "Interactive PCA trajectory.",
-          "tags": [
-            "PCA",
-            "3D",
-            "latent"
-          ]
-        }
+        { "type": "audio", "title": "Blues",     "file": "audio/genre_blues.au",     "mime": "audio/basic" },
+        { "type": "audio", "title": "Classical", "file": "audio/genre_classical.au", "mime": "audio/basic" },
+        { "type": "audio", "title": "Country",   "file": "audio/genre_country.au",   "mime": "audio/basic" },
+        { "type": "audio", "title": "Disco",     "file": "audio/genre_disco.au",     "mime": "audio/basic" },
+        { "type": "audio", "title": "Hip-hop",   "file": "audio/genre_hiphop.au",    "mime": "audio/basic" },
+        { "type": "audio", "title": "Jazz",      "file": "audio/genre_jazz.au",      "mime": "audio/basic" },
+        { "type": "audio", "title": "Metal",     "file": "audio/genre_metal.au",     "mime": "audio/basic" },
+        { "type": "audio", "title": "Pop",       "file": "audio/genre_pop.au",       "mime": "audio/basic" },
+        { "type": "audio", "title": "Reggae",    "file": "audio/genre_reggae.au",    "mime": "audio/basic" },
+        { "type": "audio", "title": "Rock",      "file": "audio/genre_rock.au",      "mime": "audio/basic" }
       ]
     },
     {
-      "title": "Music \u2014 Instruments",
-      "description": "Jamendo/GTZAN instrument clustering demos.",
+      "title": "Spectral Morphing — Audio",
+      "description": "Originals and morphed directions (guitar↔piano).",
       "items": [
-        {
-          "type": "audio",
-          "title": "Violin solo (replace)",
-          "file": "audio/violin_demo.wav",
-          "caption": "Cluster center example.",
-          "tags": [
-            "Violin",
-            "Jamendo"
-          ],
-          "mime": "audio/wav"
-        }
+        { "type": "audio", "title": "Original: guitar→piano", "file": "audio/morph_00_original-guitar-piano.wav", "mime": "audio/wav" },
+        { "type": "audio", "title": "Original: piano→guitar", "file": "audio/morph_00_original-piano-guitar.wav", "mime": "audio/wav" },
+        { "type": "audio", "title": "Morphed (strength 1.00): guitar→piano", "file": "audio/morph_04_strength_1.00-guitar-piano.wav", "mime": "audio/wav" },
+        { "type": "audio", "title": "Morphed (strength 1.00): piano→guitar", "file": "audio/morph_04_strength_1.00-piano-guitar.wav", "mime": "audio/wav" }
+      ]
+    },
+    {
+      "title": "Pitch Manipulation — Audio (Speaker p236)",
+      "description": "Reconstructions across semitone shifts Δ.",
+      "items": [
+        { "type": "audio", "title": "Δ = −10", "file": "audio/p236_004_mic2_reconstructed_-10 copy.wav", "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = −5",  "file": "audio/p236_004_mic2_reconstructed_-5 copy.wav",  "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = −2",  "file": "audio/p236_004_mic2_reconstructed_-2 copy.wav",  "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = −1",  "file": "audio/p236_004_mic2_reconstructed_-1 copy.wav",  "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = 0",   "file": "audio/p236_004_mic2_reconstructed_0 copy.wav",   "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = +1",  "file": "audio/p236_004_mic2_reconstructed_1 copy.wav",   "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = +2",  "file": "audio/p236_004_mic2_reconstructed_2 copy.wav",   "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = +5",  "file": "audio/p236_004_mic2_reconstructed_5 copy.wav",   "mime": "audio/wav" },
+        { "type": "audio", "title": "Δ = +10", "file": "audio/p236_004_mic2_reconstructed_10 copy.wav",  "mime": "audio/wav" }
+      ]
+    },
+    {
+      "title": "Clustering — Interactive Plots",
+      "description": "2–3D latent visualizations for instrument/genre sets.",
+      "items": [
+        { "type": "plot", "title": "4 Instruments — 3D",   "file": "plots/4_inst_clustering_3d.html" },
+        { "type": "plot", "title": "15 Instruments — 3D",  "file": "plots/15_inst_clustering_3d.html" },
+        { "type": "plot", "title": "25 Instruments — 3D",  "file": "plots/25_inst_clustering_3d.html" },
+        { "type": "plot", "title": "Genres — 3D",          "file": "plots/genre_clustering_3d.html" }
+      ]
+    },
+    {
+      "title": "Pitch — Interactive Plots",
+      "description": "Pitch trajectories and manipulation.",
+      "items": [
+        { "type": "plot", "title": "Pitch Manipulation (demo)", "file": "plots/pitch_manipulation.html" },
+        { "type": "plot", "title": "PCA on Speech — 3D",       "file": "plots/pitch_pca_speech_3d.html" },
+        { "type": "plot", "title": "PCA on Sine — 3D",         "file": "plots/pitch_pca_sine_3d.html" }
+      ]
+    },
+    {
+      "title": "Spectral Changes — Visualization",
+      "description": "Analysis image of the morphing process.",
+      "items": [
+        { "type": "image", "title": "Spectral Morphing Analysis", "file": "plots/spectral_morphing_analysis%20copy.png", "caption": "Static figure summarizing spectral changes." }
       ]
     }
   ]
