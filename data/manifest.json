@@ -72,7 +72,7 @@
       "title": "Spectral Changes — Visualization",
       "description": "Analysis image of the morphing process.",
       "items": [
-        { "type": "image", "title": "Spectral Morphing Analysis", "file": "plots/spectral_morphing_analysis%20copy.png", "caption": "Static figure summarizing spectral changes." }
+        { "type": "image", "title": "Spectral Morphing Analysis", "file": "plots/spectral_morphing_analysis.png", "caption": "Static figure summarizing spectral changes." }
       ]
     }
   ]
