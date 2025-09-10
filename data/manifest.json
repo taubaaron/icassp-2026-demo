@@ -30,8 +30,8 @@
       "description": "Interactive latent trajectories and manipulation views.",
       "cols": 1,
       "items": [
-        { "type": "plot", "title": "PCA on Speech — 3D",        "file": "plots/pitch_pca_speech_3d.html" },
-        { "type": "plot", "title": "PCA on Sine — 3D",          "file": "plots/pitch_pca_sine_3d.html" },
+        { "type": "plot", "title": "PCA on Speech",            "file": "plots/pitch_pca_speech_3d.html" },
+        { "type": "plot", "title": "PCA on Sine",              "file": "plots/pitch_pca_sine_3d.html" },
         { "type": "plot", "title": "Pitch Manipulation (demo)", "file": "plots/pitch_manipulation.html" }
       ]
     },
