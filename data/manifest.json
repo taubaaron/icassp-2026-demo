@@ -6,6 +6,12 @@
     "paper_link": "",
     "code_link": "https://github.com/taubaaron/icassp-2026-demo",
     "doi_link": ""
+    "abstract": "This page supplements the paper with audio demonstrations and interactive visualizations. We investigate how pitch and timbre manipulations are reflected in learned latent spaces. Section 1 presents pitch shifting on VCTK speech and corresponding interactive PCA plots. Section 2 showcases spectral morphing between instruments (guitar↔piano). Section 3 provides genre exemplars. Section 4 gives 3D clustering views for genres and instruments. The goal is to make qualitative phenomena audible and explorable beyond the page limits.",
+    "notes": [
+      "Headphones recommended.",
+      "All speech samples use speaker p236 unless noted.",
+      "Interactive plots are best viewed on desktop."
+    ]
   },
   "sections": [
     {
