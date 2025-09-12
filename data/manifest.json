@@ -1,16 +1,16 @@
 {
   "project": {
     "title": "Explainable Audio Codec — Supplementary Materials",
-    "authors": "A. Taub, O. Tal, Y. Adi, et al.",
+    "authors": "A. Taub, Y. Adi, et al.",
     "conference": "ICASSP 2026",
     "paper_link": "",
     "code_link": "https://github.com/taubaaron/icassp-2026-demo",
-    "doi_link": ""
+    "doi_link": "",
     "abstract": "Neural audio latent representation models such as EnCodec, DAC, and Vallex achieve high compression ratios while enabling high-fidelity speech and music generation. The latent representations produced by these models, however, remain poorly understood.\n\nIn this paper, we present a systematic study of latent space geometry in neural audio representation models. We examine how pitch is encoded, whether instruments and genres form consistent clusters, and whether latent vectors can be manipulated for controllable transformations. Our experiments are conducted under a controlled setup, comparing multiple representation model variants with similar backbone architectures as well as widely used open-source latent representation models.\n\nOur observations show that pitch and timbre correspond to interpretable latent trajectories, clustering aligns with semantic categories, and these structures can be used for latent space manipulation. These findings provide the first comprehensive evidence of explainable structure in the latent spaces of neural audio representation models.",
     "notes": [
-      "Headphones recommended.",
-      "All speech samples use speaker p236 unless noted.",
-      "Interactive plots are best viewed on desktop."
+      "Headphones recommended for best perceptual quality.",
+      "All speech samples use speaker p236 unless otherwise noted.",
+      "Interactive plots are best viewed on desktop with Chrome/Firefox."
     ]
   },
   "sections": [
@@ -30,39 +30,35 @@
         { "type": "audio", "title": "Δ = +10", "file": "audio/p236_004_mic2_reconstructed_10 copy.wav",  "mime": "audio/wav" }
       ]
     },
-
     {
       "title": "Pitch Shift & Manipulation — Plots",
       "description": "Interactive latent trajectories and manipulation views.",
       "cols": 1,
       "items": [
-        { "type": "plot", "title": "PCA on Speech",            "file": "plots/pitch_pca_speech_3d.html" },
-        { "type": "plot", "title": "PCA on Sine",              "file": "plots/pitch_pca_sine_3d.html" },
-        { "type": "plot", "title": "Pitch Manipulation (demo)", "file": "plots/pitch_manipulation.html" }
+        { "type": "plot", "title": "Pitch Manipulation (demo)", "file": "plots/pitch_manipulation.html" },
+        { "type": "plot", "title": "PCA on Speech — 3D",        "file": "plots/pitch_pca_speech_3d.html" },
+        { "type": "plot", "title": "PCA on Sine — 3D",          "file": "plots/pitch_pca_sine_3d.html" }
       ]
     },
-
     {
       "title": "Spectral Morphing — Audio",
       "description": "Originals and morphed directions (guitar↔piano). Arranged two per row.",
       "cols": 2,
       "items": [
-        { "type": "audio", "title": "Original: guitar→piano",                 "file": "audio/morph_00_original-guitar-piano.wav",     "mime": "audio/wav" },
-        { "type": "audio", "title": "Original: piano→guitar",                 "file": "audio/morph_00_original-piano-guitar.wav",     "mime": "audio/wav" },
-        { "type": "audio", "title": "Morphed (strength 1.00): guitar→piano",  "file": "audio/morph_04_strength_1.00-guitar-piano.wav","mime": "audio/wav" },
-        { "type": "audio", "title": "Morphed (strength 1.00): piano→guitar",  "file": "audio/morph_04_strength_1.00-piano-guitar.wav","mime": "audio/wav" }
+        { "type": "audio", "title": "Original: guitar→piano",                "file": "audio/morph_00_original-guitar-piano.wav",      "mime": "audio/wav" },
+        { "type": "audio", "title": "Original: piano→guitar",                "file": "audio/morph_00_original-piano-guitar.wav",      "mime": "audio/wav" },
+        { "type": "audio", "title": "Morphed (strength 1.00): guitar→piano", "file": "audio/morph_04_strength_1.00-guitar-piano.wav", "mime": "audio/wav" },
+        { "type": "audio", "title": "Morphed (strength 1.00): piano→guitar", "file": "audio/morph_04_strength_1.00-piano-guitar.wav", "mime": "audio/wav" }
       ]
     },
-
     {
       "title": "Spectral Morphing — Images",
       "description": "Analysis image of the morphing process.",
       "cols": 1,
       "items": [
-        { "type": "image", "title": "Spectral Morphing Analysis", "file": "plots/spectral_morphing_analysis.png", "caption": "Static figure summarizing spectral changes." }
+        { "type": "image", "title": "Spectral Morphing Analysis", "file": "plots/spectral_morphing_analysis%20copy.png", "caption": "Static figure summarizing spectral changes." }
       ]
     },
-
     {
       "title": "Genres — Audio Examples",
       "description": "Short genre exemplars.",
@@ -80,7 +76,6 @@
         { "type": "audio", "title": "Rock",      "file": "audio/genre_rock.au",      "mime": "audio/basic" }
       ]
     },
-
     {
       "title": "Genre & Instrument Clustering — Plots",
       "description": "Interactive 3D latent visualizations for instruments and genres.",
@@ -92,36 +87,35 @@
         { "type": "plot", "title": "Genres — 3D",          "file": "plots/genre_clustering_3d.html" }
       ]
     },
-
     {
       "title": "Instrument Examples — Audio",
       "description": "Example timbres used in clustering and morphing.",
       "cols": 3,
       "items": [
-        { "type": "audio", "title": "Accordion",      "file": "audio/inst_accordion.wav",      "mime": "audio/wav" },
-        { "type": "audio", "title": "Acoustic Guitar","file": "audio/inst_acoustic_guitar.wav","mime": "audio/wav" },
-        { "type": "audio", "title": "Banjo",          "file": "audio/inst_banjo.wav",          "mime": "audio/wav" },
-        { "type": "audio", "title": "Bass Guitar",    "file": "audio/inst_bass_guitar.wav",    "mime": "audio/wav" },
-        { "type": "audio", "title": "Clarinet",       "file": "audio/inst_clarinet.wav",       "mime": "audio/wav" },
-        { "type": "audio", "title": "Cymbals",        "file": "audio/inst_cymbals.wav",        "mime": "audio/wav" },
-        { "type": "audio", "title": "Dobro",          "file": "audio/inst_dobro.wav",          "mime": "audio/wav" },
-        { "type": "audio", "title": "Electric Guitar","file": "audio/inst_electric_guitar.wav","mime": "audio/wav" },
-        { "type": "audio", "title": "Floor Tom",      "file": "audio/inst_floor_tom.wav",      "mime": "audio/wav" },
-        { "type": "audio", "title": "Flute",          "file": "audio/inst_flute.wav",          "mime": "audio/wav" },
-        { "type": "audio", "title": "Harmonica",      "file": "audio/inst_harmonica.wav",      "mime": "audio/wav" },
-        { "type": "audio", "title": "Hi-Hats",        "file": "audio/inst_hi_hats.wav",        "mime": "audio/wav" },
-        { "type": "audio", "title": "Horn",           "file": "audio/inst_horn.wav",           "mime": "audio/wav" },
-        { "type": "audio", "title": "Keyboard",       "file": "audio/inst_keyboard.wav",       "mime": "audio/wav" },
-        { "type": "audio", "title": "Mandolin",       "file": "audio/inst_mandolin.wav",       "mime": "audio/wav" },
-        { "type": "audio", "title": "Organ",          "file": "audio/inst_organ.wav",          "mime": "audio/wav" },
-        { "type": "audio", "title": "Piano",          "file": "audio/inst_piano.wav",          "mime": "audio/wav" },
-        { "type": "audio", "title": "Saxophone",      "file": "audio/inst_saxophone.wav",      "mime": "audio/wav" },
-        { "type": "audio", "title": "Shakers",        "file": "audio/inst_shakers.wav",        "mime": "audio/wav" },
-        { "type": "audio", "title": "Tambourine",     "file": "audio/inst_tambourine.wav",     "mime": "audio/wav" },
-        { "type": "audio", "title": "Trombone",       "file": "audio/inst_trombone.wav",       "mime": "audio/wav" },
-        { "type": "audio", "title": "Trumpet",        "file": "audio/inst_trumpet.wav",        "mime": "audio/wav" },
-        { "type": "audio", "title": "Ukulele",        "file": "audio/inst_ukulele.wav",        "mime": "audio/wav" },
-        { "type": "audio", "title": "Vibraphone",     "file": "audio/inst_vibraphone.wav",     "mime": "audio/wav" }
+        { "type": "audio", "title": "Accordion",       "file": "audio/inst_accordion.wav",       "mime": "audio/wav" },
+        { "type": "audio", "title": "Acoustic Guitar", "file": "audio/inst_acoustic_guitar.wav", "mime": "audio/wav" },
+        { "type": "audio", "title": "Banjo",           "file": "audio/inst_banjo.wav",           "mime": "audio/wav" },
+        { "type": "audio", "title": "Bass Guitar",     "file": "audio/inst_bass_guitar.wav",     "mime": "audio/wav" },
+        { "type": "audio", "title": "Clarinet",        "file": "audio/inst_clarinet.wav",        "mime": "audio/wav" },
+        { "type": "audio", "title": "Cymbals",         "file": "audio/inst_cymbals.wav",         "mime": "audio/wav" },
+        { "type": "audio", "title": "Dobro",           "file": "audio/inst_dobro.wav",           "mime": "audio/wav" },
+        { "type": "audio", "title": "Electric Guitar", "file": "audio/inst_electric_guitar.wav", "mime": "audio/wav" },
+        { "type": "audio", "title": "Floor Tom",       "file": "audio/inst_floor_tom.wav",       "mime": "audio/wav" },
+        { "type": "audio", "title": "Flute",           "file": "audio/inst_flute.wav",           "mime": "audio/wav" },
+        { "type": "audio", "title": "Harmonica",       "file": "audio/inst_harmonica.wav",       "mime": "audio/wav" },
+        { "type": "audio", "title": "Hi-Hats",         "file": "audio/inst_hi_hats.wav",         "mime": "audio/wav" },
+        { "type": "audio", "title": "Horn",            "file": "audio/inst_horn.wav",            "mime": "audio/wav" },
+        { "type": "audio", "title": "Keyboard",        "file": "audio/inst_keyboard.wav",        "mime": "audio/wav" },
+        { "type": "audio", "title": "Mandolin",        "file": "audio/inst_mandolin.wav",        "mime": "audio/wav" },
+        { "type": "audio", "title": "Organ",           "file": "audio/inst_organ.wav",           "mime": "audio/wav" },
+        { "type": "audio", "title": "Piano",           "file": "audio/inst_piano.wav",           "mime": "audio/wav" },
+        { "type": "audio", "title": "Saxophone",       "file": "audio/inst_saxophone.wav",       "mime": "audio/wav" },
+        { "type": "audio", "title": "Shakers",         "file": "audio/inst_shakers.wav",         "mime": "audio/wav" },
+        { "type": "audio", "title": "Tambourine",      "file": "audio/inst_tambourine.wav",      "mime": "audio/wav" },
+        { "type": "audio", "title": "Trombone",        "file": "audio/inst_trombone.wav",        "mime": "audio/wav" },
+        { "type": "audio", "title": "Trumpet",         "file": "audio/inst_trumpet.wav",         "mime": "audio/wav" },
+        { "type": "audio", "title": "Ukulele",         "file": "audio/inst_ukulele.wav",         "mime": "audio/wav" },
+        { "type": "audio", "title": "Vibraphone",      "file": "audio/inst_vibraphone.wav",      "mime": "audio/wav" }
       ]
     }
   ]
