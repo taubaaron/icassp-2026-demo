@@ -1,4 +1,4 @@
-/* ICASSP 2026 Results — robust loader + accordion + filters */
+/* ICASSP 2026 Results — robust loader + accordion (no filters) */
 
 /* ---------- helpers ---------- */
 function el(tag, attrs={}, ...kids){
@@ -37,8 +37,6 @@ async function loadManifest(){
       if (r.ok){
         console.log('[results] Loaded manifest from', p);
         return await r.json();
-      } else {
-        console.warn('[results] Not found at', p, r.status);
       }
     }catch(e){
       console.warn('[results] Fetch failed for', p, e);
@@ -53,7 +51,7 @@ function setHeader(p){
     p?.title || 'Project Supplementary Materials';
 
   const bits=[];
-  if (p?.authors)   bits.push(p.authors);
+  if (p?.authors)    bits.push(p.authors);
   if (p?.conference) bits.push(p.conference);
   document.querySelector('.subtle').textContent = bits.join(' · ');
 
@@ -80,7 +78,7 @@ function renderOverview(p){
   }
 }
 
-/* ---------- ToC & filters ---------- */
+/* ---------- ToC ---------- */
 function buildTOC(sections){
   const toc=document.getElementById('toc');
   toc.innerHTML='';
@@ -89,39 +87,6 @@ function buildTOC(sections){
   (sections||[]).forEach((s,i)=>{
     const id='sec-'+(i+1);
     toc.append(el('a',{href:'#'+id}, s.title || ('Section '+(i+1))));
-  });
-}
-function buildFilters(allTags){
-  if (!allTags.size) return;
-  let filtersHost = document.getElementById('filters');
-  if (!filtersHost){
-    filtersHost = el('div',{id:'filters', class:'filters'});
-    const content = document.getElementById('content');
-    content.prepend(filtersHost);
-  } else {
-    filtersHost.classList.add('filters');
-  }
-  filtersHost.innerHTML = '';
-  [...allTags].sort((a,b)=>a.localeCompare(b)).forEach(tag=>{
-    filtersHost.append(el('div',{class:'filter-chip','data-tag':tag}, tag));
-  });
-
-  const chips = Array.from(filtersHost.querySelectorAll('.filter-chip'));
-  const items = Array.from(document.querySelectorAll('[data-tags]'));
-  function applyFilter(){
-    const active = chips.filter(c=>c.classList.contains('active')).map(c=>c.dataset.tag);
-    if (!active.length){ items.forEach(el=>el.style.display=''); return; }
-    items.forEach(el=>{
-      const tags = (el.dataset.tags || '').split(',').map(s=>s.trim()).filter(Boolean);
-      const show = active.every(a=>tags.includes(a)); // AND logic
-      el.style.display = show ? '' : 'none';
-    });
-  }
-  chips.forEach(chip=>{
-    chip.addEventListener('click', ()=>{
-      chip.classList.toggle('active');
-      applyFilter();
-    });
   });
 }
 
@@ -158,7 +123,8 @@ function badgeForType(item){
   return [];
 }
 function renderItemCard(item){
-  const card = el('div',{class:'item','data-tags':(item.tags||[]).join(',')});
+  const card = el('div',{class:'item'}); // removed data-tags to avoid filters completely
+
   const head = el('div',{class:'item-head'});
   head.append(el('span',{class:'item-title'}, item.title || 'Item'));
   badgeForType(item).forEach(b=> head.append(el('span',{class:'badge'}, b)));
@@ -188,7 +154,7 @@ function renderItemCard(item){
 }
 function renderSections(sections){
   const host=document.getElementById('content');
-  const allTags = new Set();
+
   (sections||[]).forEach((sec,i)=>{
     const id='sec-'+(i+1);
     const details = el('details',{class:'accordion', id});
@@ -200,10 +166,9 @@ function renderSections(sections){
 
     const body = el('div',{class:'section-body'});
     const cols = Number(sec.cols||0);
-    const grid = el('div',{class: (cols?`grid cols-${cols}`:'grid auto')});
+    const grid = el('div',{class: (cols?`grid cols-${cols}`:'grid cols-1')}); // default to full-width single column
 
     (sec.items||[]).forEach(item=>{
-      (item.tags||[]).forEach(t=> allTags.add(t));
       grid.append( renderItemCard(item) );
     });
 
@@ -211,7 +176,6 @@ function renderSections(sections){
     details.append(body);
     host.append(details);
   });
-  buildFilters(allTags);
 
   if (location.hash){
     const target = document.querySelector(location.hash);
