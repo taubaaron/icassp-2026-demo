@@ -1,35 +1,35 @@
 {
   "project": {
     "title": "ICASSP 2026 — Supplementary Results",
-    "abstract": "Collapsible sections with concise explanations for pitch manipulation, spectral morphing, and clustering results. Audio players and interactive plots are organized for quick scanning."
+    "abstract": "This page supplements the paper with perceptual and visual evidence for three components: (i) pitch manipulation in latent audio spaces using stepwise (manual) and spline-based controls, (ii) spectral morphing that transitions between sources while aiming to preserve structure, and (iii) unsupervised structure in embeddings for genres and instruments. We provide audio exemplars and interactive plots so reviewers can both hear the effects and inspect the underlying geometry."
   },
   "sections": [
     {
-      "title": "Pitch shift & manipulation — audio",
-      "description": "Baseline and shifted versions (manual vs spline) for VCTK p236_004 (mic2). Listen for: (1) relative pitch change vs the 0 st baseline, (2) timbre consistency, and (3) artifacts that grow at large |Δsemitone|. All examples use the same pipeline; per-file captions are omitted for brevity.",
-      "cols": 1,
+      "title": "Pitch manipulation — audio",
+      "description": "Baseline and shifted versions for VCTK p236_004 (mic2). Listen for relative pitch change vs the 0-semitone baseline, timbre consistency, and artifacts that grow at large |Δsemitone|. All files follow the same pipeline; per-file captions are omitted for brevity.",
+      "cols": 3,
       "items": [
-        { "type": "audio", "title": "p236_004 — baseline (0 st)", "file": "audio/p236_004_mic2_reconstructed_0 copy.wav" },
-        { "type": "audio", "title": "Manual +3.14 st",           "file": "audio/manual_+3p14st.wav" },
-        { "type": "audio", "title": "Manual +7.70 st",           "file": "audio/manual_+7p70st.wav" },
-        { "type": "audio", "title": "Manual −5.67 st",           "file": "audio/manual_-5p67st.wav" },
-        { "type": "audio", "title": "Spline +3.14 st",           "file": "audio/spline_+3p14st.wav" },
-        { "type": "audio", "title": "Spline +7.70 st",           "file": "audio/spline_+7p70st.wav" },
-        { "type": "audio", "title": "Spline −5.67 st",           "file": "audio/spline_-5p67st.wav" },
-        { "type": "audio", "title": "Reconstructed −10 st",      "file": "audio/p236_004_mic2_reconstructed_-10 copy.wav" },
-        { "type": "audio", "title": "Reconstructed −5 st",       "file": "audio/p236_004_mic2_reconstructed_-5 copy.wav" },
-        { "type": "audio", "title": "Reconstructed −2 st",       "file": "audio/p236_004_mic2_reconstructed_-2 copy.wav" },
-        { "type": "audio", "title": "Reconstructed −1 st",       "file": "audio/p236_004_mic2_reconstructed_-1 copy.wav" },
-        { "type": "audio", "title": "Reconstructed +1 st",       "file": "audio/p236_004_mic2_reconstructed_1 copy.wav" },
-        { "type": "audio", "title": "Reconstructed +2 st",       "file": "audio/p236_004_mic2_reconstructed_2 copy.wav" },
-        { "type": "audio", "title": "Reconstructed +5 st",       "file": "audio/p236_004_mic2_reconstructed_5 copy.wav" },
-        { "type": "audio", "title": "Reconstructed +10 st",      "file": "audio/p236_004_mic2_reconstructed_10 copy.wav" }
+        { "type": "audio", "title": "Baseline (0 st) — p236_004", "file": "audio/p236_004_mic2_reconstructed_0 copy.wav" },
+        { "type": "audio", "title": "Manual +3.14 st", "file": "audio/manual_+3p14st.wav" },
+        { "type": "audio", "title": "Manual +7.70 st", "file": "audio/manual_+7p70st.wav" },
+        { "type": "audio", "title": "Manual −5.67 st", "file": "audio/manual_-5p67st.wav" },
+        { "type": "audio", "title": "Spline +3.14 st", "file": "audio/spline_+3p14st.wav" },
+        { "type": "audio", "title": "Spline +7.70 st", "file": "audio/spline_+7p70st.wav" },
+        { "type": "audio", "title": "Spline −5.67 st", "file": "audio/spline_-5p67st.wav" },
+        { "type": "audio", "title": "Reconstructed −10 st", "file": "audio/p236_004_mic2_reconstructed_-10 copy.wav" },
+        { "type": "audio", "title": "Reconstructed −5 st", "file": "audio/p236_004_mic2_reconstructed_-5 copy.wav" },
+        { "type": "audio", "title": "Reconstructed −2 st", "file": "audio/p236_004_mic2_reconstructed_-2 copy.wav" },
+        { "type": "audio", "title": "Reconstructed −1 st", "file": "audio/p236_004_mic2_reconstructed_-1 copy.wav" },
+        { "type": "audio", "title": "Reconstructed +1 st", "file": "audio/p236_004_mic2_reconstructed_1 copy.wav" },
+        { "type": "audio", "title": "Reconstructed +2 st", "file": "audio/p236_004_mic2_reconstructed_2 copy.wav" },
+        { "type": "audio", "title": "Reconstructed +5 st", "file": "audio/p236_004_mic2_reconstructed_5 copy.wav" },
+        { "type": "audio", "title": "Reconstructed +10 st", "file": "audio/p236_004_mic2_reconstructed_10 copy.wav" }
       ]
     },
 
     {
-      "title": "Pitch shift & manipulation — images / interactive",
-      "description": "Full-width figures and interactive plots of latent geometry (2D/3D) and spline visualizations.",
+      "title": "Pitch manipulation — figures & interactive",
+      "description": "Full-width figures and interactive plots showing latent geometry and spline visualizations.",
       "cols": 1,
       "items": [
         { "type": "plot",  "title": "Pitch PCA — speech (3D)", "file": "plots/pitch_pca_speech_3d.html" },
@@ -46,18 +46,18 @@
 
     {
       "title": "Spectral morphing — audio",
-      "description": "Two-up layout: originals and morphed outputs shown side-by-side for quick comparison.",
-      "cols": 2,
+      "description": "Three-across layout for quick comparison of originals and morphed outputs.",
+      "cols": 3,
       "items": [
-        { "type": "audio", "title": "Original — guitar→piano (A)",            "file": "audio/morph_00_original-guitar-piano.wav" },
-        { "type": "audio", "title": "Original — piano→guitar (B)",            "file": "audio/morph_00_original-piano-guitar.wav" },
-        { "type": "audio", "title": "Morph (strength=1.00) — guitar→piano",   "file": "audio/morph_04_strength_1.00-guitar-piano.wav" },
-        { "type": "audio", "title": "Morph (strength=1.00) — piano→guitar",   "file": "audio/morph_04_strength_1.00-piano-guitar.wav" }
+        { "type": "audio", "title": "Original — guitar→piano",  "file": "audio/morph_00_original-guitar-piano.wav" },
+        { "type": "audio", "title": "Original — piano→guitar",  "file": "audio/morph_00_original-piano-guitar.wav" },
+        { "type": "audio", "title": "Morph (strength=1.00) — guitar→piano", "file": "audio/morph_04_strength_1.00-guitar-piano.wav" },
+        { "type": "audio", "title": "Morph (strength=1.00) — piano→guitar", "file": "audio/morph_04_strength_1.00-piano-guitar.wav" }
       ]
     },
 
     {
-      "title": "Spectral morphing — images",
+      "title": "Spectral morphing — figures",
       "description": "Full-width figures illustrating morph paths / analysis.",
       "cols": 1,
       "items": [
@@ -67,7 +67,7 @@
 
     {
       "title": "Genre & instrument clustering — interactive",
-      "description": "Full-width interactive 3D plots of instruments/genre and codec-specific PCA.",
+      "description": "Full-width interactive plots for clustering and codec-specific PCA.",
       "cols": 1,
       "items": [
         { "type": "plot", "title": "Instruments (4 classes) — 3D",  "file": "plots/4_inst_clustering_3d.html" },
@@ -83,54 +83,54 @@
       ]
     },
 
-{
-  "title": "Genre — audio exemplars",
-  "description": "Single exemplar per genre cluster (AU format). Headphones recommended. Listen for rhythmic/harmonic signatures and production cues typical of each genre.",
-  "cols": 1,
-  "items": [
-    { "type": "audio", "title": "Blues — exemplar",      "file": "audio/genre_blues.au" },
-    { "type": "audio", "title": "Classical — exemplar",  "file": "audio/genre_classical.au" },
-    { "type": "audio", "title": "Country — exemplar",    "file": "audio/genre_country.au" },
-    { "type": "audio", "title": "Disco — exemplar",      "file": "audio/genre_disco.au" },
-    { "type": "audio", "title": "Hip-hop — exemplar",    "file": "audio/genre_hiphop.au" },
-    { "type": "audio", "title": "Jazz — exemplar",       "file": "audio/genre_jazz.au" },
-    { "type": "audio", "title": "Metal — exemplar",      "file": "audio/genre_metal.au" },
-    { "type": "audio", "title": "Pop — exemplar",        "file": "audio/genre_pop.au" },
-    { "type": "audio", "title": "Reggae — exemplar",     "file": "audio/genre_reggae.au" },
-    { "type": "audio", "title": "Rock — exemplar",       "file": "audio/genre_rock.au" }
-  ]
-},
-{
-  "title": "Instrument — audio exemplars",
-  "description": "One exemplar per instrument cluster (WAV). Focus on timbre, onset/decay, and spectral envelope differences.",
-  "cols": 1,
-  "items": [
-    { "type": "audio", "title": "Accordion — exemplar",        "file": "audio/inst_accordion.wav" },
-    { "type": "audio", "title": "Acoustic guitar — exemplar",  "file": "audio/inst_acoustic_guitar.wav" },
-    { "type": "audio", "title": "Banjo — exemplar",            "file": "audio/inst_banjo.wav" },
-    { "type": "audio", "title": "Bass guitar — exemplar",      "file": "audio/inst_bass_guitar.wav" },
-    { "type": "audio", "title": "Clarinet — exemplar",         "file": "audio/inst_clarinet.wav" },
-    { "type": "audio", "title": "Cymbals — exemplar",          "file": "audio/inst_cymbals.wav" },
-    { "type": "audio", "title": "Dobro — exemplar",            "file": "audio/inst_dobro.wav" },
-    { "type": "audio", "title": "Electric guitar — exemplar",  "file": "audio/inst_electric_guitar.wav" },
-    { "type": "audio", "title": "Floor tom — exemplar",        "file": "audio/inst_floor_tom.wav" },
-    { "type": "audio", "title": "Flute — exemplar",            "file": "audio/inst_flute.wav" },
-    { "type": "audio", "title": "Harmonica — exemplar",        "file": "audio/inst_harmonica.wav" },
-    { "type": "audio", "title": "Hi-hats — exemplar",          "file": "audio/inst_hi_hats.wav" },
-    { "type": "audio", "title": "Horn — exemplar",             "file": "audio/inst_horn.wav" },
-    { "type": "audio", "title": "Keyboard — exemplar",         "file": "audio/inst_keyboard.wav" },
-    { "type": "audio", "title": "Mandolin — exemplar",         "file": "audio/inst_mandolin.wav" },
-    { "type": "audio", "title": "Organ — exemplar",            "file": "audio/inst_organ.wav" },
-    { "type": "audio", "title": "Piano — exemplar",            "file": "audio/inst_piano.wav" },
-    { "type": "audio", "title": "Saxophone — exemplar",        "file": "audio/inst_saxophone.wav" },
-    { "type": "audio", "title": "Shakers — exemplar",          "file": "audio/inst_shakers.wav" },
-    { "type": "audio", "title": "Tambourine — exemplar",       "file": "audio/inst_tambourine.wav" },
-    { "type": "audio", "title": "Trombone — exemplar",         "file": "audio/inst_trombone.wav" },
-    { "type": "audio", "title": "Trumpet — exemplar",          "file": "audio/inst_trumpet.wav" },
-    { "type": "audio", "title": "Ukulele — exemplar",          "file": "audio/inst_ukulele.wav" },
-    { "type": "audio", "title": "Vibraphone — exemplar",       "file": "audio/inst_vibraphone.wav" }
-  ]
-}
+    {
+      "title": "Genre — audio exemplars",
+      "description": "One exemplar per genre cluster (AU).",
+      "cols": 3,
+      "items": [
+        { "type": "audio", "title": "Blues — exemplar",      "file": "audio/genre_blues.au" },
+        { "type": "audio", "title": "Classical — exemplar",  "file": "audio/genre_classical.au" },
+        { "type": "audio", "title": "Country — exemplar",    "file": "audio/genre_country.au" },
+        { "type": "audio", "title": "Disco — exemplar",      "file": "audio/genre_disco.au" },
+        { "type": "audio", "title": "Hip-hop — exemplar",    "file": "audio/genre_hiphop.au" },
+        { "type": "audio", "title": "Jazz — exemplar",       "file": "audio/genre_jazz.au" },
+        { "type": "audio", "title": "Metal — exemplar",      "file": "audio/genre_metal.au" },
+        { "type": "audio", "title": "Pop — exemplar",        "file": "audio/genre_pop.au" },
+        { "type": "audio", "title": "Reggae — exemplar",     "file": "audio/genre_reggae.au" },
+        { "type": "audio", "title": "Rock — exemplar",       "file": "audio/genre_rock.au" }
+      ]
+    },
 
+    {
+      "title": "Instrument — audio exemplars",
+      "description": "One exemplar per instrument cluster (WAV).",
+      "cols": 3,
+      "items": [
+        { "type": "audio", "title": "Accordion — exemplar",        "file": "audio/inst_accordion.wav" },
+        { "type": "audio", "title": "Acoustic guitar — exemplar",  "file": "audio/inst_acoustic_guitar.wav" },
+        { "type": "audio", "title": "Banjo — exemplar",            "file": "audio/inst_banjo.wav" },
+        { "type": "audio", "title": "Bass guitar — exemplar",      "file": "audio/inst_bass_guitar.wav" },
+        { "type": "audio", "title": "Clarinet — exemplar",         "file": "audio/inst_clarinet.wav" },
+        { "type": "audio", "title": "Cymbals — exemplar",          "file": "audio/inst_cymbals.wav" },
+        { "type": "audio", "title": "Dobro — exemplar",            "file": "audio/inst_dobro.wav" },
+        { "type": "audio", "title": "Electric guitar — exemplar",  "file": "audio/inst_electric_guitar.wav" },
+        { "type": "audio", "title": "Floor tom — exemplar",        "file": "audio/inst_floor_tom.wav" },
+        { "type": "audio", "title": "Flute — exemplar",            "file": "audio/inst_flute.wav" },
+        { "type": "audio", "title": "Harmonica — exemplar",        "file": "audio/inst_harmonica.wav" },
+        { "type": "audio", "title": "Hi-hats — exemplar",          "file": "audio/inst_hi_hats.wav" },
+        { "type": "audio", "title": "Horn — exemplar",             "file": "audio/inst_horn.wav" },
+        { "type": "audio", "title": "Keyboard — exemplar",         "file": "audio/inst_keyboard.wav" },
+        { "type": "audio", "title": "Mandolin — exemplar",         "file": "audio/inst_mandolin.wav" },
+        { "type": "audio", "title": "Organ — exemplar",            "file": "audio/inst_organ.wav" },
+        { "type": "audio", "title": "Piano — exemplar",            "file": "audio/inst_piano.wav" },
+        { "type": "audio", "title": "Saxophone — exemplar",        "file": "audio/inst_saxophone.wav" },
+        { "type": "audio", "title": "Shakers — exemplar",          "file": "audio/inst_shakers.wav" },
+        { "type": "audio", "title": "Tambourine — exemplar",       "file": "audio/inst_tambourine.wav" },
+        { "type": "audio", "title": "Trombone — exemplar",         "file": "audio/inst_trombone.wav" },
+        { "type": "audio", "title": "Trumpet — exemplar",          "file": "audio/inst_trumpet.wav" },
+        { "type": "audio", "title": "Ukulele — exemplar",          "file": "audio/inst_ukulele.wav" },
+        { "type": "audio", "title": "Vibraphone — exemplar",       "file": "audio/inst_vibraphone.wav" }
+      ]
+    }
   ]
 }
