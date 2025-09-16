@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ICASSP 2026 — Results</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Supplementary results for ICASSP 2026: pitch manipulation, spectral morphing, and clustering (audio, images, interactive plots).">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
+  <!-- Hero / header populated by script.js (title, authors, links) -->
   <header class="hero">
     <div class="hero-inner">
       <h1 id="title">ICASSP 2026 — Results</h1>
@@ -16,15 +19,24 @@
     </div>
   </header>
 
+  <!-- Two-column layout: sticky ToC + content -->
   <div class="layout">
     <aside class="toc" id="toc">
       <h3>On this page</h3>
-      <!-- Will be filled by script.js -->
+      <!-- Links are injected by assets/script.js -->
     </aside>
 
     <main id="content">
-      <!-- The script will insert Filters, Overview (if any), and all sections from data/manifest.json -->
-      <noscript><p>Please enable JavaScript to view the results.</p></noscript>
+      <!-- Filters (chips) are injected here by assets/script.js -->
+      <!-- Overview (if present in manifest) is injected here -->
+      <!-- All collapsible sections & items are injected here -->
+      <noscript>
+        <div class="callout">
+          <strong>JavaScript is disabled.</strong>
+          This page renders content dynamically from <code>data/manifest.json</code>.  
+          Please enable JavaScript or open the manifest directly.
+        </div>
+      </noscript>
     </main>
   </div>
 
@@ -35,7 +47,8 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="analytics.js" defer></script>
+  <!-- Order matters: script.js builds the page; analytics is optional -->
+  <script src="assets/script.js"></script>
+  <script src="assets/analytics.js" defer></script>
 </body>
 </html>
