@@ -1,9 +1,8 @@
 {
   "project": {
-    "title": "ICASS P2026 — Supplementary Results",
-    "abstract": "Collapsible sections with clear explanations for pitch manipulation, spectral morphing, and clustering results. Click an item to play or open. Use the filter chips to narrow by tags (e.g., pitch, morph, clustering, encodec, dac, speech, music)."
+    "title": "ICASSP 2026 — Supplementary Results",
+    "abstract": "Collapsible sections with clear explanations for pitch manipulation, spectral morphing, and clustering results. Click an item to play or open. Use the filter chips to narrow by tags (e.g., pitch, morph, clustering, speech, music)."
   },
-
   "sections": [
     {
       "title": "Pitch shift & manipulation — audio",
@@ -14,7 +13,7 @@
           "type": "audio",
           "title": "p236_004 — baseline (0 st)",
           "file": "audio/p236_004_mic2_reconstructed_0 copy.wav",
-          "tags": ["pitch","speech"],
+          "tags": ["pitch", "speech"],
           "desc": {
             "what": ["Reference utterance for comparison against shifted versions."],
             "look": ["Use this as the perceptual baseline."],
@@ -25,80 +24,126 @@
           "type": "audio",
           "title": "Manual +3.14 st",
           "file": "audio/manual_+3p14st.wav",
-          "tags": ["pitch","speech"],
+          "tags": ["pitch", "speech"],
           "desc": {
-            "what": ["Pitch-shifted version labelled 'manual' (+3.14 st)."],
+            "what": ["Pitch-shifted version labelled \"manual\" (+3.14 st)."],
             "look": ["Higher pitch vs baseline; note timbre consistency and any artifacts."],
-            "method": ["As per 'manual' pipeline noted in filename; see paper."]
+            "method": ["As per \"manual\" pipeline noted in filename; see paper."]
           }
         },
         {
           "type": "audio",
           "title": "Manual +7.70 st",
           "file": "audio/manual_+7p70st.wav",
-          "tags": ["pitch","speech"],
+          "tags": ["pitch", "speech"],
           "desc": {
-            "what": ["'Manual' pitch shift (+7.70 st)."],
+            "what": ["\"Manual\" pitch shift (+7.70 st)."],
             "look": ["Larger shift; listen for increased artifacts at extremes."],
-            "method": ["As labelled 'manual' in filename; see paper."]
+            "method": ["As labelled \"manual\" in filename; see paper."]
           }
         },
         {
           "type": "audio",
           "title": "Manual −5.67 st",
           "file": "audio/manual_-5p67st.wav",
-          "tags": ["pitch","speech"],
+          "tags": ["pitch", "speech"],
           "desc": {
-            "what": ["'Manual' pitch shift (−5.67 st)."],
+            "what": ["\"Manual\" pitch shift (−5.67 st)."],
             "look": ["Lower pitch vs baseline; check timbre preservation."],
-            "method": ["As labelled 'manual' in filename; see paper."]
+            "method": ["As labelled \"manual\" in filename; see paper."]
           }
         },
         {
           "type": "audio",
           "title": "Spline +3.14 st",
           "file": "audio/spline_+3p14st.wav",
-          "tags": ["pitch","speech"],
+          "tags": ["pitch", "speech"],
           "desc": {
-            "what": ["Pitch manipulation labelled 'spline' (+3.14 st)."],
-            "look": ["Higher pitch vs baseline; compare artifacts vs 'manual' version."],
-            "method": ["As labelled 'spline' in filename; see paper for details."]
+            "what": ["Pitch manipulation labelled \"spline\" (+3.14 st)."],
+            "look": ["Higher pitch vs baseline; compare artifacts vs \"manual\" version."],
+            "method": ["As labelled \"spline\" in filename; see paper for details."]
           }
         },
         {
           "type": "audio",
           "title": "Spline +7.70 st",
           "file": "audio/spline_+7p70st.wav",
-          "tags": ["pitch","speech"],
+          "tags": ["pitch", "speech"],
           "desc": {
-            "what": ["'Spline' pitch manipulation (+7.70 st)."],
+            "what": ["\"Spline\" pitch manipulation (+7.70 st)."],
             "look": ["Larger upward shift; inspect intelligibility and buzziness."],
-            "method": ["As labelled 'spline' in filename; see paper."]
+            "method": ["As labelled \"spline\" in filename; see paper."]
           }
         },
         {
           "type": "audio",
           "title": "Spline −5.67 st",
           "file": "audio/spline_-5p67st.wav",
-          "tags": ["pitch","speech"],
+          "tags": ["pitch", "speech"],
           "desc": {
-            "what": ["'Spline' pitch manipulation (−5.67 st)."],
-            "look": ["Lower pitch vs baseline; compare to 'manual' −5.67 st."],
-            "method": ["As labelled 'spline' in filename; see paper."]
+            "what": ["\"Spline\" pitch manipulation (−5.67 st)."],
+            "look": ["Lower pitch vs baseline; compare to \"manual\" −5.67 st."],
+            "method": ["As labelled \"spline\" in filename; see paper."]
           }
         },
-
-        { "type": "audio", "title": "Reconstructed −10 st", "file": "audio/p236_004_mic2_reconstructed_-10 copy.wav", "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=−10 st."], "look": ["Increasing artifacts at larger shifts."], "method": ["Same reconstruction pipeline; see paper."]} },
-        { "type": "audio", "title": "Reconstructed −5 st",  "file": "audio/p236_004_mic2_reconstructed_-5 copy.wav",  "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=−5 st."],  "look": ["Closer to baseline than −10 st."], "method": ["Same pipeline."]} },
-        { "type": "audio", "title": "Reconstructed −2 st",  "file": "audio/p236_004_mic2_reconstructed_-2 copy.wav",  "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=−2 st."],  "look": ["Small downward shift."], "method": ["Same pipeline."]} },
-        { "type": "audio", "title": "Reconstructed −1 st",  "file": "audio/p236_004_mic2_reconstructed_-1 copy.wav",  "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=−1 st."],  "look": ["Minimal change from baseline."], "method": ["Same pipeline."]} },
-        { "type": "audio", "title": "Reconstructed +1 st",  "file": "audio/p236_004_mic2_reconstructed_1 copy.wav",   "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=+1 st."],  "look": ["Minimal change from baseline."], "method": ["Same pipeline."]} },
-        { "type": "audio", "title": "Reconstructed +2 st",  "file": "audio/p236_004_mic2_reconstructed_2 copy.wav",   "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=+2 st."],  "look": ["Small upward shift."], "method": ["Same pipeline."]} },
-        { "type": "audio", "title": "Reconstructed +5 st",  "file": "audio/p236_004_mic2_reconstructed_5 copy.wav",   "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=+5 st."],  "look": ["Moderate upward shift."], "method": ["Same pipeline."]} },
-        { "type": "audio", "title": "Reconstructed +10 st", "file": "audio/p236_004_mic2_reconstructed_10 copy.wav",  "tags": ["pitch","speech"], "desc": {"what": ["Reconstructed at Δ=+10 st."], "look": ["Larger upward shift; strongest artifacts expected."], "method": ["Same pipeline."]} }
+        {
+          "type": "audio",
+          "title": "Reconstructed −10 st",
+          "file": "audio/p236_004_mic2_reconstructed_-10 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=−10 st."], "look": ["Increasing artifacts at larger shifts."], "method": ["Same reconstruction pipeline; see paper."] }
+        },
+        {
+          "type": "audio",
+          "title": "Reconstructed −5 st",
+          "file": "audio/p236_004_mic2_reconstructed_-5 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=−5 st."], "look": ["Closer to baseline than −10 st."], "method": ["Same pipeline."] }
+        },
+        {
+          "type": "audio",
+          "title": "Reconstructed −2 st",
+          "file": "audio/p236_004_mic2_reconstructed_-2 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=−2 st."], "look": ["Small downward shift."], "method": ["Same pipeline."] }
+        },
+        {
+          "type": "audio",
+          "title": "Reconstructed −1 st",
+          "file": "audio/p236_004_mic2_reconstructed_-1 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=−1 st."], "look": ["Minimal change from baseline."], "method": ["Same pipeline."] }
+        },
+        {
+          "type": "audio",
+          "title": "Reconstructed +1 st",
+          "file": "audio/p236_004_mic2_reconstructed_1 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=+1 st."], "look": ["Minimal change from baseline."], "method": ["Same pipeline."] }
+        },
+        {
+          "type": "audio",
+          "title": "Reconstructed +2 st",
+          "file": "audio/p236_004_mic2_reconstructed_2 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=+2 st."], "look": ["Small upward shift."], "method": ["Same pipeline."] }
+        },
+        {
+          "type": "audio",
+          "title": "Reconstructed +5 st",
+          "file": "audio/p236_004_mic2_reconstructed_5 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=+5 st."], "look": ["Moderate upward shift."], "method": ["Same pipeline."] }
+        },
+        {
+          "type": "audio",
+          "title": "Reconstructed +10 st",
+          "file": "audio/p236_004_mic2_reconstructed_10 copy.wav",
+          "tags": ["pitch", "speech"],
+          "desc": { "what": ["Reconstructed at Δ=+10 st."], "look": ["Larger upward shift; strongest artifacts expected."], "method": ["Same pipeline."] }
+        }
       ]
     },
-
     {
       "title": "Pitch shift & manipulation — images / interactive",
       "description": "Latent geometry (2D/3D) and pitch-manipulation visualizations.",
@@ -108,7 +153,7 @@
           "type": "plot",
           "title": "Pitch PCA — speech (3D)",
           "file": "plots/pitch_pca_speech_3d.html",
-          "tags": ["pitch","speech","interactive"],
+          "tags": ["pitch", "speech", "interactive"],
           "desc": {
             "what": ["Interactive 3D PCA for speech under semitone sweep."],
             "look": ["Smooth arc/trajectory with adjacent semitone proximity."],
@@ -119,10 +164,10 @@
           "type": "plot",
           "title": "Pitch PCA — sine (3D)",
           "file": "plots/pitch_pca_sine_3d.html",
-          "tags": ["pitch","music","interactive"],
+          "tags": ["pitch", "music", "interactive"],
           "desc": {
             "what": ["Interactive 3D PCA for synthetic sines under semitone sweep."],
-            "look": ["Similar geometry to speech -> a consistent pitch axis."],
+            "look": ["Similar geometry to speech → a consistent pitch axis."],
             "method": ["Latent frames → PCA(3) → Plotly."]
           }
         },
@@ -130,28 +175,28 @@
           "type": "plot",
           "title": "Latent 3D — +3.14 st",
           "file": "plots/latent3d_+3p14.html",
-          "tags": ["pitch","interactive"],
+          "tags": ["pitch", "interactive"],
           "desc": { "what": ["Interactive latent view at +3.14 st."], "look": ["Relative position vs 0 st and other targets."], "method": ["As in paper."] }
         },
         {
           "type": "plot",
           "title": "Latent 3D — +7.70 st",
           "file": "plots/latent3d_+7p70.html",
-          "tags": ["pitch","interactive"],
+          "tags": ["pitch", "interactive"],
           "desc": { "what": ["Interactive latent view at +7.70 st."], "look": ["Larger displacement along pitch axis."], "method": ["As in paper."] }
         },
         {
           "type": "plot",
           "title": "Latent 3D — −5.67 st",
           "file": "plots/latent3d_-5p67.html",
-          "tags": ["pitch","interactive"],
+          "tags": ["pitch", "interactive"],
           "desc": { "what": ["Interactive latent view at −5.67 st."], "look": ["Opposite-direction displacement."], "method": ["As in paper."] }
         },
         {
           "type": "plot",
           "title": "Pitch manipulation flow (interactive)",
           "file": "plots/pitch_manipulation.html",
-          "tags": ["pitch","interactive"],
+          "tags": ["pitch", "interactive"],
           "desc": { "what": ["Interactive visualization of the manipulation pipeline."], "look": ["Overall flow & components."], "method": ["See figure annotations."] }
         },
         {
@@ -177,7 +222,6 @@
         }
       ]
     },
-
     {
       "title": "Spectral morphing — audio",
       "description": "Pairs show morphing between two sources; originals and morphed outputs.",
@@ -187,33 +231,32 @@
           "type": "audio",
           "title": "Original — guitar→piano (A)",
           "file": "audio/morph_00_original-guitar-piano.wav",
-          "tags": ["morph","music"],
+          "tags": ["morph", "music"],
           "desc": { "what": ["Original source A (guitar→piano order)."], "look": ["Use as reference for morph outputs."], "method": ["As in data generation."] }
         },
         {
           "type": "audio",
           "title": "Original — piano→guitar (B)",
           "file": "audio/morph_00_original-piano-guitar.wav",
-          "tags": ["morph","music"],
+          "tags": ["morph", "music"],
           "desc": { "what": ["Original source B (piano→guitar order)."], "look": ["Reference for morph outputs."], "method": ["As in data generation."] }
         },
         {
           "type": "audio",
           "title": "Morph (strength=1.00) — guitar→piano",
           "file": "audio/morph_04_strength_1.00-guitar-piano.wav",
-          "tags": ["morph","music"],
+          "tags": ["morph", "music"],
           "desc": { "what": ["Morphed output A→B at strength 1.00."], "look": ["Gradual spectral/timbral shift; note continuity."], "method": ["Latent interpolation with smoothing (per paper)."] }
         },
         {
           "type": "audio",
           "title": "Morph (strength=1.00) — piano→guitar",
           "file": "audio/morph_04_strength_1.00-piano-guitar.wav",
-          "tags": ["morph","music"],
+          "tags": ["morph", "music"],
           "desc": { "what": ["Morphed output B→A at strength 1.00."], "look": ["Asymmetry vs A→B."], "method": ["Same interpolation scheme; reversed endpoints."] }
         }
       ]
     },
-
     {
       "title": "Spectral morphing — images",
       "description": "Plots illustrating morph paths / analysis.",
@@ -228,28 +271,82 @@
         }
       ]
     },
-
     {
       "title": "Genre & instrument clustering — interactive",
       "description": "Interactive 3D plots of instruments/genre; codec-specific PCA comparisons.",
       "cols": 2,
       "items": [
-        { "type": "plot", "title": "Instruments (4 classes) — 3D",  "file": "plots/4_inst_clustering_3d.html",  "tags": ["clustering","instrument","interactive"], "desc": { "what": ["Interactive clustering for 4 instruments."], "look": ["Separation between classes; overlaps."], "method": ["Embedding → DR → 3D plot."] } },
-        { "type": "plot", "title": "Instruments (15 classes) — 3D", "file": "plots/15_inst_clustering_3d.html", "tags": ["clustering","instrument","interactive"], "desc": { "what": ["Interactive clustering for 15 instruments."], "look": ["Family groupings."], "method": ["As above."] } },
-        { "type": "plot", "title": "Instruments (25 classes) — 3D", "file": "plots/25_inst_clustering_3d.html", "tags": ["clustering","instrument","interactive"], "desc": { "what": ["Interactive clustering for 25 instruments."], "look": ["Finer-grained separation."], "method": ["As above."] } },
-
-        { "type": "plot", "title": "Best 3D — 3CB", "file": "plots/15_inst_3CB_best_3d.html", "tags": ["clustering","instrument","interactive"], "desc": { "what": ["Selected best 3D view (3CB)."], "look": ["Compact clusters; boundaries."], "method": ["As above."] } },
-        { "type": "plot", "title": "Best 3D — AE",   "file": "plots/15_inst_AE_best_3d.html",  "tags": ["clustering","instrument","interactive"], "desc": { "what": ["Selected best 3D view (AE)."],  "look": ["Cluster tightness vs 3CB/VAE."], "method": ["As above."] } },
-        { "type": "plot", "title": "Best 3D — VAE",  "file": "plots/15_inst_VAE_best_3d.html", "tags": ["clustering","instrument","interactive"], "desc": { "what": ["Selected best 3D view (VAE)."], "look": ["Relative separation/overlap."], "method": ["As above."] } },
-
-        { "type": "plot", "title": "Codec PCA — EnCodec (3D)", "file": "plots/encodec_pca_3d.html", "tags": ["clustering","interactive"], "desc": { "what": ["Interactive PCA using EnCodec embeddings."], "look": ["Structure shaped by this codec."], "method": ["Latents → PCA(3)."] } },
-        { "type": "plot", "title": "Codec PCA — DAC (3D)",     "file": "plots/dac_pca_3d.html",     "tags": ["clustering","interactive"], "desc": { "what": ["Interactive PCA using DAC embeddings."],     "look": ["Compare vs EnCodec and Vallex."], "method": ["Latents → PCA(3)."] } },
-        { "type": "plot", "title": "Codec PCA — Vallex (3D)",  "file": "plots/vallex_pca_3d.html",  "tags": ["clustering","interactive"], "desc": { "what": ["Interactive PCA using Vallex embeddings."],  "look": ["Compare vs other codecs."], "method": ["Latents → PCA(3)."] } },
-
-        { "type": "plot", "title": "Genre clustering (3D)",     "file": "plots/genre_clustering_3d.html", "tags": ["clustering","genre","interactive"], "desc": { "what": ["Interactive 3D genre clustering."], "look": ["Genre grouping; overlap regions."], "method": ["Embedding → DR/PCA(3) → Plotly."] } }
+        {
+          "type": "plot",
+          "title": "Instruments (4 classes) — 3D",
+          "file": "plots/4_inst_clustering_3d.html",
+          "tags": ["clustering", "instrument", "interactive"],
+          "desc": { "what": ["Interactive clustering for 4 instruments."], "look": ["Separation between classes; overlaps."], "method": ["Embedding → DR → 3D plot."] }
+        },
+        {
+          "type": "plot",
+          "title": "Instruments (15 classes) — 3D",
+          "file": "plots/15_inst_clustering_3d.html",
+          "tags": ["clustering", "instrument", "interactive"],
+          "desc": { "what": ["Interactive clustering for 15 instruments."], "look": ["Family groupings."], "method": ["As above."] }
+        },
+        {
+          "type": "plot",
+          "title": "Instruments (25 classes) — 3D",
+          "file": "plots/25_inst_clustering_3d.html",
+          "tags": ["clustering", "instrument", "interactive"],
+          "desc": { "what": ["Interactive clustering for 25 instruments."], "look": ["Finer-grained separation."], "method": ["As above."] }
+        },
+        {
+          "type": "plot",
+          "title": "Best 3D — 3CB",
+          "file": "plots/15_inst_3CB_best_3d.html",
+          "tags": ["clustering", "instrument", "interactive"],
+          "desc": { "what": ["Selected best 3D view (3CB)."], "look": ["Compact clusters; boundaries."], "method": ["As above."] }
+        },
+        {
+          "type": "plot",
+          "title": "Best 3D — AE",
+          "file": "plots/15_inst_AE_best_3d.html",
+          "tags": ["clustering", "instrument", "interactive"],
+          "desc": { "what": ["Selected best 3D view (AE)."], "look": ["Cluster tightness vs 3CB/VAE."], "method": ["As above."] }
+        },
+        {
+          "type": "plot",
+          "title": "Best 3D — VAE",
+          "file": "plots/15_inst_VAE_best_3d.html",
+          "tags": ["clustering", "instrument", "interactive"],
+          "desc": { "what": ["Selected best 3D view (VAE)."], "look": ["Relative separation/overlap."], "method": ["As above."] }
+        },
+        {
+          "type": "plot",
+          "title": "Codec PCA — EnCodec (3D)",
+          "file": "plots/encodec_pca_3d.html",
+          "tags": ["clustering", "interactive"],
+          "desc": { "what": ["Interactive PCA using EnCodec embeddings."], "look": ["Structure shaped by this codec."], "method": ["Latents → PCA(3)."] }
+        },
+        {
+          "type": "plot",
+          "title": "Codec PCA — DAC (3D)",
+          "file": "plots/dac_pca_3d.html",
+          "tags": ["clustering", "interactive"],
+          "desc": { "what": ["Interactive PCA using DAC embeddings."], "look": ["Compare vs EnCodec and Vallex."], "method": ["Latents → PCA(3)."] }
+        },
+        {
+          "type": "plot",
+          "title": "Codec PCA — Vallex (3D)",
+          "file": "plots/vallex_pca_3d.html",
+          "tags": ["clustering", "interactive"],
+          "desc": { "what": ["Interactive PCA using Vallex embeddings."], "look": ["Compare vs other codecs."], "method": ["Latents → PCA(3)."] }
+        },
+        {
+          "type": "plot",
+          "title": "Genre clustering (3D)",
+          "file": "plots/genre_clustering_3d.html",
+          "tags": ["clustering", "genre", "interactive"],
+          "desc": { "what": ["Interactive 3D genre clustering."], "look": ["Genre grouping; overlap regions."], "method": ["Embedding → DR/PCA(3) → Plotly."] }
+        }
       ]
     }
-
-    /* If you want “Genre clustering — audio” exemplars, add them as another section later. */
   ]
 }
