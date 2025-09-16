@@ -1,16 +1,6 @@
-/* ICASSP 2026 Results — dynamic rendering (accordion + filters) */
+/* ICASSP 2026 Results — robust loader + accordion + filters */
 
-async function loadJSON(path){
-  try{
-    const r = await fetch(path + '?v=' + Date.now(), {cache:'no-store'});
-    return r.ok ? await r.json() : null;
-  }catch(e){
-    console.error('JSON load failed', e);
-    return null;
-  }
-}
-
-/* ---------- small helpers ---------- */
+/* ---------- helpers ---------- */
 function el(tag, attrs={}, ...kids){
   const n = document.createElement(tag);
   for (const [k,v] of Object.entries(attrs||{})){
@@ -32,21 +22,29 @@ function guessMime(f){
   if (x.endsWith('.pdf'))  return 'application/pdf';
   return '';
 }
-function badgeForType(item){
-  // Try explicit badges first
-  if (Array.isArray(item.badges) && item.badges.length) return item.badges;
-  // Otherwise infer: WAV/PNG/HTML/PDF
-  const f = (item.file||'').toLowerCase();
-  if (f.endsWith('.wav')) return ['WAV'];
-  if (f.endsWith('.mp3')) return ['MP3'];
-  if (f.endsWith('.ogg')) return ['OGG'];
-  if (f.endsWith('.png')) return ['PNG'];
-  if (f.endsWith('.jpg') || f.endsWith('.jpeg')) return ['JPG'];
-  if (f.endsWith('.html')) return ['HTML','Interactive'];
-  if (f.endsWith('.pdf')) return ['PDF'];
-  // Fallback to item.type
-  if (item.type) return [String(item.type).toUpperCase()];
-  return [];
+
+/* Try multiple manifest locations and surface a friendly error */
+async function loadManifest(){
+  const candidates = [
+    'data/manifest.json',
+    './data/manifest.json',
+    'manifest.json',
+    './manifest.json'
+  ];
+  for (const p of candidates){
+    try{
+      const r = await fetch(p + '?v=' + Date.now(), { cache:'no-store' });
+      if (r.ok){
+        console.log('[results] Loaded manifest from', p);
+        return await r.json();
+      } else {
+        console.warn('[results] Not found at', p, r.status);
+      }
+    }catch(e){
+      console.warn('[results] Fetch failed for', p, e);
+    }
+  }
+  return null;
 }
 
 /* ---------- header / overview ---------- */
@@ -82,24 +80,19 @@ function renderOverview(p){
   }
 }
 
-/* ---------- table of contents ---------- */
+/* ---------- ToC & filters ---------- */
 function buildTOC(sections){
   const toc=document.getElementById('toc');
   toc.innerHTML='';
   toc.append(el('h3',{},'On this page'));
-  // Only show Overview link if it exists
-  const hasOverview = !!document.getElementById('overview');
-  if (hasOverview) toc.append(el('a',{href:'#overview'},'Overview'));
-  sections.forEach((s,i)=>{
+  if (document.getElementById('overview')) toc.append(el('a',{href:'#overview'},'Overview'));
+  (sections||[]).forEach((s,i)=>{
     const id='sec-'+(i+1);
     toc.append(el('a',{href:'#'+id}, s.title || ('Section '+(i+1))));
   });
 }
-
-/* ---------- filters (chips) ---------- */
 function buildFilters(allTags){
   if (!allTags.size) return;
-  // Ensure a container exists; create it just before sections if not present.
   let filtersHost = document.getElementById('filters');
   if (!filtersHost){
     filtersHost = el('div',{id:'filters', class:'filters'});
@@ -110,7 +103,7 @@ function buildFilters(allTags){
   }
   filtersHost.innerHTML = '';
   [...allTags].sort((a,b)=>a.localeCompare(b)).forEach(tag=>{
-    filtersHost.append(el('div',{class:'filter-chip', 'data-tag':tag}, tag));
+    filtersHost.append(el('div',{class:'filter-chip','data-tag':tag}, tag));
   });
 
   const chips = Array.from(filtersHost.querySelectorAll('.filter-chip'));
@@ -120,8 +113,7 @@ function buildFilters(allTags){
     if (!active.length){ items.forEach(el=>el.style.display=''); return; }
     items.forEach(el=>{
       const tags = (el.dataset.tags || '').split(',').map(s=>s.trim()).filter(Boolean);
-      // AND logic: show item only if it contains ALL active tags
-      const show = active.every(a=>tags.includes(a));
+      const show = active.every(a=>tags.includes(a)); // AND logic
       el.style.display = show ? '' : 'none';
     });
   }
@@ -133,82 +125,72 @@ function buildFilters(allTags){
   });
 }
 
-/* ---------- sections & items ---------- */
+/* ---------- items & sections ---------- */
 function makeDescBlock(desc){
-  // desc can be string OR {what:[], look:[], method:[]}
   if (!desc) return null;
   const box = el('div',{class:'desc'});
-  if (typeof desc === 'string'){
-    box.append(el('p',{}, desc));
-    return box;
-  }
-  if (desc.what && desc.what.length){
+  if (typeof desc === 'string'){ box.append(el('p',{},desc)); return box; }
+  if (desc.what?.length){
     box.append(el('h4',{},'What this is'));
     const ul=el('ul',{}); desc.what.forEach(t=>ul.append(el('li',{},t))); box.append(ul);
   }
-  if (desc.look && desc.look.length){
+  if (desc.look?.length){
     box.append(el('h4',{},'What to look/listen for'));
     const ul=el('ul',{}); desc.look.forEach(t=>ul.append(el('li',{},t))); box.append(ul);
   }
-  if (desc.method && desc.method.length){
+  if (desc.method?.length){
     box.append(el('h4',{},'Method'));
     const ul=el('ul',{}); desc.method.forEach(t=>ul.append(el('li',{},t))); box.append(ul);
   }
   return box;
 }
-
+function badgeForType(item){
+  if (Array.isArray(item.badges) && item.badges.length) return item.badges;
+  const f=(item.file||'').toLowerCase();
+  if (f.endsWith('.wav')) return ['WAV'];
+  if (f.endsWith('.mp3')) return ['MP3'];
+  if (f.endsWith('.ogg')) return ['OGG'];
+  if (f.endsWith('.png')) return ['PNG'];
+  if (f.endsWith('.jpg') || f.endsWith('.jpeg')) return ['JPG'];
+  if (f.endsWith('.html')) return ['HTML','Interactive'];
+  if (f.endsWith('.pdf')) return ['PDF'];
+  if (item.type) return [String(item.type).toUpperCase()];
+  return [];
+}
 function renderItemCard(item){
-  const card = el('div',{class:'item', 'data-tags': (item.tags||[]).join(',') });
-
-  // Header
+  const card = el('div',{class:'item','data-tags':(item.tags||[]).join(',')});
   const head = el('div',{class:'item-head'});
-  head.append(el('span',{class:'item-title'}, item.title || (
-    item.type==='audio' ? 'Audio sample' :
-    item.type==='plot'  ? 'Interactive plot' :
-    item.type==='pdf'   ? 'PDF' :
-    item.type==='image' ? 'Figure' : 'Item'
-  )));
-  const badges = badgeForType(item);
-  badges.forEach(b=> head.append(el('span',{class:'badge'}, b)));
+  head.append(el('span',{class:'item-title'}, item.title || 'Item'));
+  badgeForType(item).forEach(b=> head.append(el('span',{class:'badge'}, b)));
   card.append(head);
 
-  // Media
   const media = el('div',{class:'item-media'});
-  const f = (item.file||'').toLowerCase();
-  if (item.type==='audio' || f.endsWith('.wav') || f.endsWith('.mp3') || f.endsWith('.ogg') || f.endsWith('.au')){
-    const mime=item.mime||guessMime(item.file)||'audio/wav';
+  const f=(item.file||'').toLowerCase();
+  if (item.type==='audio' || /\.(wav|mp3|ogg|au)$/i.test(f)){
     const a=el('audio',{controls:'',preload:'none'});
-    a.append(el('source',{src:item.file,type:mime}));
+    a.append(el('source',{src:item.file,type:guessMime(item.file)||'audio/wav'}));
     a.append('Your browser does not support the audio element.');
     media.append(a);
   } else if (item.type==='plot' || f.endsWith('.html')){
     media.append(el('iframe',{class:'plot',src:item.file,loading:'lazy',title:item.title||'Interactive plot'}));
   } else if (item.type==='pdf' || f.endsWith('.pdf')){
     media.append(el('iframe',{class:'pdf',src:item.file,loading:'lazy',title:item.title||'PDF preview'}));
-  } else if (item.type==='image' || f.endsWith('.png') || f.endsWith('.jpg') || f.endsWith('.jpeg')){
+  } else if (item.type==='image' || /\.(png|jpg|jpeg)$/i.test(f)){
     media.append(el('img',{src:item.file,alt:item.title||'figure'}));
   } else {
     media.append(el('p',{class:'item-caption'}, 'Unsupported item type.'));
   }
 
-  // Explanation / caption
   const descNode = makeDescBlock(item.desc);
   if (descNode) media.append(descNode);
-  if (item.caption && !descNode){
-    card.append(el('div',{class:'item-caption'}, item.caption));
-  }
-
   card.append(media);
   return card;
 }
-
 function renderSections(sections){
   const host=document.getElementById('content');
   const allTags = new Set();
-
-  sections.forEach((sec,i)=>{
+  (sections||[]).forEach((sec,i)=>{
     const id='sec-'+(i+1);
-
     const details = el('details',{class:'accordion', id});
     if (i===0) details.setAttribute('open','open');
 
@@ -217,13 +199,10 @@ function renderSections(sections){
     details.append(summary);
 
     const body = el('div',{class:'section-body'});
-
     const cols = Number(sec.cols||0);
-    const gridClass = cols ? `grid cols-${cols}` : 'grid auto';
-    const grid = el('div',{class:gridClass});
+    const grid = el('div',{class: (cols?`grid cols-${cols}`:'grid auto')});
 
     (sec.items||[]).forEach(item=>{
-      // accumulate tags for filter chips
       (item.tags||[]).forEach(t=> allTags.add(t));
       grid.append( renderItemCard(item) );
     });
@@ -232,11 +211,8 @@ function renderSections(sections){
     details.append(body);
     host.append(details);
   });
-
-  // Build filter chips once we know all unique tags
   buildFilters(allTags);
 
-  // If URL has a hash matching a section, open it
   if (location.hash){
     const target = document.querySelector(location.hash);
     if (target && target.tagName.toLowerCase()==='details') target.setAttribute('open','open');
@@ -245,9 +221,20 @@ function renderSections(sections){
 
 /* ---------- boot ---------- */
 (async()=>{
-  const m = await loadJSON('data/manifest.json');
-  setHeader(m?.project||{});
-  renderOverview(m?.project||{});
-  buildTOC(m?.sections||[]);
-  renderSections(m?.sections||[]);
+  const content = document.getElementById('content');
+  const m = await loadManifest();
+
+  if (!m){
+    content.innerHTML = `
+      <div class="callout">
+        <strong>Setup error:</strong> Could not load <code>manifest.json</code>.<br>
+        Place it at <code>/data/manifest.json</code> (recommended) or at the site root as <code>/manifest.json</code>.
+      </div>`;
+    return;
+  }
+
+  setHeader(m.project || {});
+  renderOverview(m.project || {});
+  buildTOC(m.sections || []);
+  renderSections(m.sections || []);
 })();
