@@ -83,11 +83,54 @@
       ]
     },
 
-    {
-      "title": "Genre & instrument — audio exemplars",
-      "description": "Short audio exemplars per instrument/genre cluster (add your file list below).",
-      "cols": 1,
-      "items": []
-    }
+{
+  "title": "Genre — audio exemplars",
+  "description": "Single exemplar per genre cluster (AU format). Headphones recommended. Listen for rhythmic/harmonic signatures and production cues typical of each genre.",
+  "cols": 1,
+  "items": [
+    { "type": "audio", "title": "Blues — exemplar",      "file": "audio/genre_blues.au" },
+    { "type": "audio", "title": "Classical — exemplar",  "file": "audio/genre_classical.au" },
+    { "type": "audio", "title": "Country — exemplar",    "file": "audio/genre_country.au" },
+    { "type": "audio", "title": "Disco — exemplar",      "file": "audio/genre_disco.au" },
+    { "type": "audio", "title": "Hip-hop — exemplar",    "file": "audio/genre_hiphop.au" },
+    { "type": "audio", "title": "Jazz — exemplar",       "file": "audio/genre_jazz.au" },
+    { "type": "audio", "title": "Metal — exemplar",      "file": "audio/genre_metal.au" },
+    { "type": "audio", "title": "Pop — exemplar",        "file": "audio/genre_pop.au" },
+    { "type": "audio", "title": "Reggae — exemplar",     "file": "audio/genre_reggae.au" },
+    { "type": "audio", "title": "Rock — exemplar",       "file": "audio/genre_rock.au" }
+  ]
+},
+{
+  "title": "Instrument — audio exemplars",
+  "description": "One exemplar per instrument cluster (WAV). Focus on timbre, onset/decay, and spectral envelope differences.",
+  "cols": 1,
+  "items": [
+    { "type": "audio", "title": "Accordion — exemplar",        "file": "audio/inst_accordion.wav" },
+    { "type": "audio", "title": "Acoustic guitar — exemplar",  "file": "audio/inst_acoustic_guitar.wav" },
+    { "type": "audio", "title": "Banjo — exemplar",            "file": "audio/inst_banjo.wav" },
+    { "type": "audio", "title": "Bass guitar — exemplar",      "file": "audio/inst_bass_guitar.wav" },
+    { "type": "audio", "title": "Clarinet — exemplar",         "file": "audio/inst_clarinet.wav" },
+    { "type": "audio", "title": "Cymbals — exemplar",          "file": "audio/inst_cymbals.wav" },
+    { "type": "audio", "title": "Dobro — exemplar",            "file": "audio/inst_dobro.wav" },
+    { "type": "audio", "title": "Electric guitar — exemplar",  "file": "audio/inst_electric_guitar.wav" },
+    { "type": "audio", "title": "Floor tom — exemplar",        "file": "audio/inst_floor_tom.wav" },
+    { "type": "audio", "title": "Flute — exemplar",            "file": "audio/inst_flute.wav" },
+    { "type": "audio", "title": "Harmonica — exemplar",        "file": "audio/inst_harmonica.wav" },
+    { "type": "audio", "title": "Hi-hats — exemplar",          "file": "audio/inst_hi_hats.wav" },
+    { "type": "audio", "title": "Horn — exemplar",             "file": "audio/inst_horn.wav" },
+    { "type": "audio", "title": "Keyboard — exemplar",         "file": "audio/inst_keyboard.wav" },
+    { "type": "audio", "title": "Mandolin — exemplar",         "file": "audio/inst_mandolin.wav" },
+    { "type": "audio", "title": "Organ — exemplar",            "file": "audio/inst_organ.wav" },
+    { "type": "audio", "title": "Piano — exemplar",            "file": "audio/inst_piano.wav" },
+    { "type": "audio", "title": "Saxophone — exemplar",        "file": "audio/inst_saxophone.wav" },
+    { "type": "audio", "title": "Shakers — exemplar",          "file": "audio/inst_shakers.wav" },
+    { "type": "audio", "title": "Tambourine — exemplar",       "file": "audio/inst_tambourine.wav" },
+    { "type": "audio", "title": "Trombone — exemplar",         "file": "audio/inst_trombone.wav" },
+    { "type": "audio", "title": "Trumpet — exemplar",          "file": "audio/inst_trumpet.wav" },
+    { "type": "audio", "title": "Ukulele — exemplar",          "file": "audio/inst_ukulele.wav" },
+    { "type": "audio", "title": "Vibraphone — exemplar",       "file": "audio/inst_vibraphone.wav" }
+  ]
+}
+
   ]
 }
