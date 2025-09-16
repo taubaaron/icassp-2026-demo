@@ -10,34 +10,35 @@
 
 /* --------- Theme tokens --------- */
 :root{
-  --bg:#ffffff;
-  --fg:#0f172a;
-  --muted:#475569;
-  --brand:#0b3d91;
-  --brand-alt:#1f69d7;
-  --card:#ffffff;
-  --line:#e5e7eb;
-  --maxw:1100px;
-  --tocw:260px;
+  /* softer, neutral light theme */
+  --bg:#f6f8fb;         /* page background */
+  --fg:#0f172a;         /* main text */
+  --muted:#475569;      /* secondary text */
+  --brand:#2563eb;      /* primary accent */
+  --brand-alt:#60a5fa;  /* gradient partner */
+  --card:#ffffff;       /* cards/accordions */
+  --line:#e5e7eb;       /* borders */
+  --maxw:1100px; --tocw:260px;
   --radius:14px;
   --shadow:0 8px 28px rgba(0,0,0,.06);
   --shadow-soft:0 1px 2px rgba(0,0,0,.05);
-  --gap:18px;
-  --pad:16px;
+  --gap:18px; --pad:16px;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#0b1020;
-    --fg:#e5e7eb;
+    /* calm dark theme */
+    --bg:#0d1117;
+    --fg:#e6edf3;
     --muted:#cbd5e1;
-    --brand:#7aa2ff;
-    --brand-alt:#5a84ff;
+    --brand:#3b82f6;
+    --brand-alt:#60a5fa;
     --card:#0f172a;
     --line:#1f2937;
     --shadow:0 10px 30px rgba(0,0,0,.4);
     --shadow-soft:0 1px 2px rgba(0,0,0,.3);
   }
 }
+
 
 /* --------- Base --------- */
 *{ box-sizing:border-box; }
@@ -56,10 +57,10 @@ iframe{ width:100%; border:0; border-radius:12px; background:#0b102008; }
 
 /* --------- Hero --------- */
 .hero{
-  background: linear-gradient(90deg, var(--brand), var(--brand-alt));
-  color:#fff;
-  padding:32px 16px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-alt) 100%);
+  color:#fff; padding:32px 16px;
 }
+
 .hero-inner{ max-width:var(--maxw); margin:0 auto; }
 .hero h1{ margin:0 0 8px; font-size: clamp(28px, 4vw, 36px); }
 .subtle{ opacity:.95; margin:4px 0 12px; }
@@ -144,6 +145,15 @@ iframe{ width:100%; border:0; border-radius:12px; background:#0b102008; }
 .accordion summary::-webkit-details-marker{ display:none; }
 .accordion .section-body{ padding: 0 16px 16px; }
 .accordion .summary-note{ font-weight:400; font-size:13px; color:var(--muted); }
+
+/* caret for <details> summary */
+.accordion summary{ position:relative; padding-right:32px; }
+.accordion summary::after{
+  content:"▸";
+  position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  font-size:16px; opacity:.7; transition: transform .18s ease;
+}
+.accordion[open] summary::after{ transform: translateY(-50%) rotate(90deg); }
 
 /* --------- Grid helpers --------- */
 .grid{ display:grid; gap:16px; }
