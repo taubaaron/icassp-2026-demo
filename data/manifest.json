@@ -3,7 +3,9 @@
     "title": "INTERSPEECH 2026 — Latent Space Analysis",
     "subtitle": "Systematic study of latent space geometry in neural audio representation models",
     "abstract": "This page supplements the paper with perceptual and visual evidence for three components: (i) pitch manipulation in latent audio spaces using stepwise (manual) and spline-based controls, (ii) spectral morphing that transitions between sources while aiming to preserve structure, and (iii) unsupervised structure in embeddings for genres and instruments. We provide audio exemplars and interactive plots so reviewers can both hear the effects and inspect the underlying geometry.",
-     { "text": "Paper (Anonymous)", "url": "paper.pdf" }
+    "links": [
+       { "text": "Paper (Anonymous)", "url": "paper.pdf" }
+    ]
   },
   "sections": [
     {
